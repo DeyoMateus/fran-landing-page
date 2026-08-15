@@ -89,7 +89,7 @@ export default function Navbar() {
           marginTop: isScrolled ? "20px" : "0px",
           borderRadius: isScrolled ? "50px" : "0px",
           backgroundColor: navBgColor,
-          height: isScrolled ? "64px" : "80px",
+          height: isScrolled ? "64px" : "64px",
           borderColor:
             activeTheme === "light"
               ? `${colors.dourado}30`
