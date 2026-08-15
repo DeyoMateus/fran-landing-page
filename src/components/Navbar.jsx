@@ -85,7 +85,6 @@ export default function Navbar() {
       `}</style>
 
       <motion.nav
-        layout
         initial={false}
         animate={{
           width: isScrolled ? "90%" : "100%",
@@ -105,7 +104,7 @@ export default function Navbar() {
         <a
           href="#"
           onClick={() => setActiveSection("")}
-          className="text-lg md:text-xl font-black flex items-center gap-2 outline-none"
+          className="text-lg md:text-xl font-black flex items-center gap-2 outline-none flex-shrink-0"
         >
           <motion.span
             animate={{ color: logoColor }}
@@ -115,7 +114,7 @@ export default function Navbar() {
           </motion.span>
         </a>
 
-        <div className="hidden md:flex items-center gap-8 text-sm font-semibold">
+        <div className="hidden md:flex items-center gap-8 text-sm font-semibold whitespace-nowrap">
           {navLinks.map((link) => {
             const isActive = link.href === `#${activeSection}`;
             return (
@@ -138,12 +137,12 @@ export default function Navbar() {
           })}
         </div>
 
-        <div className="hidden md:block">
+        <div className="hidden md:block flex-shrink-0">
           <motion.a
             href="#contact"
             animate={{ backgroundColor: btnBgColor, color: btnTextColor }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-sm shadow-lg hover:brightness-110 outline-none"
+            className="inline-flex items-center gap-2 px-3 py-2.5 rounded-full font-bold text-sm shadow-lg hover:brightness-110 outline-none whitespace-nowrap"
           >
             <span>Falar com Especialista</span>
             <ArrowRight className="w-4 h-4" />
