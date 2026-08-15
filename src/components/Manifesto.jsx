@@ -185,7 +185,7 @@ export default function Manifesto() {
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full mb-12 text-center">
         <h2 className="text-xs md:text-sm font-semibold tracking-widest text-[#A89A8B] uppercase mb-2">
-          Diagnóstico e Cura
+          Diagnóstico e Solução
         </h2>
         <h3 className="text-2xl md:text-4xl font-bold text-[#F5F0E7] font-serif">
           Onde empresas falham.{" "}
