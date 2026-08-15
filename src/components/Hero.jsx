@@ -75,15 +75,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-gold-400 to-gold-600 text-black font-bold text-base shadow-md hover:scale-105 transition-all"
-          >
-            <span>Quero Escalar Meu Negócio</span>
-            <ArrowRight className="w-6 h-6" />
-          </a>
-        </motion.div>
+        ></motion.div>
       </div>
     </section>
   );
