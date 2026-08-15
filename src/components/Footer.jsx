@@ -22,7 +22,7 @@ export default function Footer() {
           </p>
 
           <a
-            href="https://wa.me/393520387515"
+            href="https://wa.me/351963809830"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-10 py-5 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 text-black font-semibold text-sm shadow-lg shadow-gold-500/20 hover:brightness-110 transition-all"
@@ -57,7 +57,7 @@ export default function Footer() {
       {/* Barra de Ação Rápida Flutuante (Mobile-First de Alta Conversão) */}
       <div className="fixed bottom-0 left-0 w-full bg-dark-950/95 backdrop-blur-md border-t border-dark-800 p-3 md:hidden z-50 flex items-center justify-center shadow-2xl">
         <a
-          href="https://wa.me/393520387515"
+          href="https://wa.me/351963809830"
           target="_blank"
           rel="noopener noreferrer"
           className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 text-black font-bold text-sm shadow-lg shadow-gold-500/20 min-h-[48px]"

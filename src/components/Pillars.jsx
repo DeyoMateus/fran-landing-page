@@ -241,7 +241,7 @@ export default function Pillars() {
               {/* Botão de Ação */}
               <div className="mt-8 pt-6 border-t border-dark-800 flex flex-col sm:flex-row gap-3">
                 <a
-                  href="https://wa.me/393520387515"
+                  href="https://wa.me/351963809830"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setSelectedPillar(null)}

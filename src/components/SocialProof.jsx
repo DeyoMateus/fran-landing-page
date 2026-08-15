@@ -185,7 +185,7 @@ export default function SocialProof() {
           </div>
 
           <a
-            href="https://wa.me/393520387515"
+            href="https://wa.me/351963809830"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-4 rounded-2xl font-bold text-sm tracking-wide transition-all duration-300 hover:scale-105 shrink-0 flex items-center gap-2 shadow-lg"
