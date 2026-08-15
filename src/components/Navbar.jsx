@@ -78,7 +78,6 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-[9999] flex justify-center font-sans pointer-events-none">
-      {/* Oculta a navbar automaticamente quando o modal estiver aberto */}
       <style>{`
         body.modal-open header {
           display: none !important;
@@ -94,14 +93,14 @@ export default function Navbar() {
           marginTop: isScrolled ? "20px" : "0px",
           borderRadius: isScrolled ? "50px" : "0px",
           backgroundColor: navBgColor,
-          height: isScrolled ? "64px" : "64px",
+          height: isScrolled ? "64px" : "80px",
           borderColor:
             activeTheme === "light"
               ? `${colors.dourado}30`
               : `${colors.taupe}30`,
         }}
         transition={{ type: "spring", stiffness: 100, damping: 25, mass: 1 }}
-        className="pointer-events-auto backdrop-blur-md flex items-center justify-between px-6 md:px-10 border border-transparent shadow-[0_15px_40px_rgba(0,0,0,0.2)] relative overflow-hidden"
+        className="pointer-events-auto backdrop-blur-md flex items-center justify-between px-6 md:px-10 border border-transparent shadow-[0_15px_40px_rgba(0,0,0,0.2)] relative overflow-visible"
       >
         <a
           href="#"
@@ -153,7 +152,7 @@ export default function Navbar() {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 transition-colors focus:outline-none flex items-center justify-center"
+          className="md:hidden p-2 transition-colors focus:outline-none flex items-center justify-center cursor-pointer"
         >
           <motion.div animate={{ color: textColor }}>
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -166,7 +165,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="absolute top-[110%] left-0 w-full rounded-3xl p-6 shadow-2xl overflow-hidden pointer-events-auto"
+              className="absolute top-[110%] left-0 w-full rounded-3xl p-6 shadow-2xl pointer-events-auto"
               style={{
                 backgroundColor:
                   activeTheme === "light" ? colors.onix : colors.marfim,
