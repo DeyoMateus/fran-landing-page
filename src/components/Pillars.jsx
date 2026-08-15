@@ -1,9 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, MessageCircle, AlertCircle } from "lucide-react";
 
 export default function Pillars() {
   const [selectedPillar, setSelectedPillar] = useState(null);
+
+  // Trava o scroll do fundo da tela e adiciona a classe ao body quando o modal abre
+  useEffect(() => {
+    if (selectedPillar) {
+      document.body.style.overflow = "hidden";
+      document.body.classList.add("modal-open");
+    } else {
+      document.body.style.overflow = "unset";
+      document.body.classList.remove("modal-open");
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+      document.body.classList.remove("modal-open");
+    };
+  }, [selectedPillar]);
 
   const pillars = [
     {
@@ -161,10 +176,10 @@ export default function Pillars() {
         </div>
       </div>
 
-      {/* MODAL DE DETALHES DO PILAR */}
+      {/* MODAL DE DETALHES DO PILAR (Com z-[99999] e fundo travado) */}
       <AnimatePresence>
         {selectedPillar && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+          <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}

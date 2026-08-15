@@ -6,7 +6,6 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeTheme, setActiveTheme] = useState("dark");
-  // Inicia vazio para não marcar nenhuma seção incorretamente no topo
   const [activeSection, setActiveSection] = useState("");
 
   const colors = {
@@ -29,7 +28,6 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 60);
-      // Se estiver próximo ao topo, limpa a seleção ativa
       if (window.scrollY < 100) {
         setActiveSection("");
       }
@@ -80,6 +78,13 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-[9999] flex justify-center font-sans pointer-events-none">
+      {/* Oculta a navbar automaticamente quando o modal estiver aberto */}
+      <style>{`
+        body.modal-open header {
+          display: none !important;
+        }
+      `}</style>
+
       <motion.nav
         layout
         initial={false}
