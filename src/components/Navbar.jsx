@@ -25,17 +25,24 @@ export default function Navbar() {
     { name: "Resultados", href: "#results" },
   ];
 
+  // 1. Sincroniza o scroll de retorno ao topo
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 60);
-      if (window.scrollY < 100) {
+      const scrolled = window.scrollY > 60;
+      setIsScrolled(scrolled);
+
+      // Quando o usuário volta para o topo
+      if (window.scrollY < 80) {
         setActiveSection("");
+        setActiveTheme("dark"); // Reseta para o tema do topo/Hero
       }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // 2. Observer das seções da página
   useEffect(() => {
     const themeMapping = {
       hero: "dark",
@@ -103,7 +110,10 @@ export default function Navbar() {
       >
         <a
           href="#"
-          onClick={() => setActiveSection("")}
+          onClick={() => {
+            setActiveSection("");
+            setActiveTheme("dark");
+          }}
           className="text-lg md:text-xl font-black flex items-center gap-2 outline-none flex-shrink-0"
         >
           <motion.span
